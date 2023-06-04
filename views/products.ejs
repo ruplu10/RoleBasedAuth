@@ -1,0 +1,25 @@
+<html>
+  <head>
+ <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <h1>Welcome <%= user.username %>!</h1>
+    <% if (user.role === 'admin') { %>
+      <a href="/api/products/adminproduct">Admin page</a>
+      <% } %>      
+      <h2> All Products </h2> <br>
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        <button id="search-button" class="search-button">Search</button>
+      </div>
+      <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <span><%= product.name %></span> -
+          <%= product.description %> - $<%= product.price %>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/api/auth/logout">Logout</a>
+  </body>
+</html>

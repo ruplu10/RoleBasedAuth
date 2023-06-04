@@ -1,0 +1,19 @@
+<html>
+  <head>
+ <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1> Home Page </h1>
+    <a href="/login">login</a>
+    <a href="/register">Register</a>
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <span><%= product.name %></span> -
+          <%= product.description %> - $<%= product.price %>
+        </li>
+      <% }) %>
+    </ul>
+
+  </body>
+</html>
